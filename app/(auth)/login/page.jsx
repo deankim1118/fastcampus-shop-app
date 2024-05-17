@@ -1,3 +1,5 @@
+import LoginClient from './loginClient';
+
 export default function Login() {
-  return <div>Login page</div>;
+  return <LoginClient />;
 }
