@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { ChangeEvent, useState } from 'react';
 import styles from './input.module.css';
-import Icon from '../icon/Icon';
+import Icon from '../icon/icon';
 
 interface IInputProps {
   id: string;
@@ -59,7 +59,7 @@ export default function Input({
   };
 
   const iconType = isPasswordVisible ? 'show' : 'hide';
-  const iconLabel = `비밀번호 ${isPasswordVisible ? '표시' : '감춤'}`;
+  const iconLabel = `${isPasswordVisible ? 'Show' : 'Hide'} Password`;
 
   return (
     <div className={classNames(styles.formControl, className)}>
@@ -76,7 +76,7 @@ export default function Input({
           errorProp && styles.inputWrapperError
         )}
       >
-        {icon ? <Icon /> : null}
+        {icon ? <Icon type={icon} /> : null}
         <input
           id={id}
           type={checkType()}
@@ -97,7 +97,7 @@ export default function Input({
             onClick={() => setIsPasswordVisible((prev) => !prev)}
             disabled={disabled}
           >
-            <Icon />
+            <Icon type={iconType} alt={iconLabel} title={iconLabel} />
           </button>
         ) : null}
       </div>
