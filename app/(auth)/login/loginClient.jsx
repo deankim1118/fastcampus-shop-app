@@ -4,6 +4,7 @@ import { useState } from 'react';
 import LogoPath from '@/assets/colorful.svg';
 import { useRouter } from 'next/navigation';
 import Loader from '@/components/loader/Loader';
+import Input from '@/components/input/Input';
 
 export default function LoginClient() {
   const [email, setEmail] = useState();
@@ -36,7 +37,8 @@ export default function LoginClient() {
             onSubmit={loginUser}
             className='flex flex-col w-full max-w-xl'
           >
-            {/*  Input  */}Input
+            <Input />
+            <Input />
             <div className='flex justify-between mt-0.5'>
               {/*  Auto Login, edit password  */}Auto
             </div>
